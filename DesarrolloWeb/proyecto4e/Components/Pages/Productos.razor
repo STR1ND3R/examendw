@@ -1,0 +1,74 @@
+@page "/Productos"
+@using Tarea9.Data
+@rendermode InteractiveServer
+@namespace poryecto4e.Data
+
+<h3>examen2</h3>
+<h4>Productos</h4>
+
+
+
+<EditForm Model="@producto" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <div>
+        <label>Numero</label>
+        <InputNumber @bind-Value="producto.numero"></InputNumber>
+        <ValidationMessage For="@(() => producto.numero)" />
+    </div>
+    <div>
+        <label>Nombre</label>
+        <InputText @bind-Value="producto.nombre"></InputText>
+        <ValidationMessage For="@(() => producto.nombre)" />
+    </div>
+    <div>
+        <label>Departamento</label><br />
+            
+        <label><InputRadio @bind-Value="producto.departamento" @Value="Frutas" /> Frutas</label><br />
+        <label><InputRadio @bind-Value="producto.departamento" @Value="Verduras" /> Verduras</label><br />
+        <label><InputRadio @bind-Value="producto.departamento" @Value="Lacteos" /> Lacteos</label><br />
+        <ValidationMessage For="@(() => producto.departamento)" />
+    </div>
+    <button type="submit">Guardar</button>
+</EditForm>
+
+
+<table class="table">
+    <th>numero</th>
+    <th>nombre</th>
+    <th>departamento</th>
+    <th>acciones</th>
+@foreach (Producto p in productos)
+{
+    <tr>
+        <td>@p.numero</td>
+        <td>@p.nombre</td>
+        <td>@p.departamento</td>
+        <td>
+            <button @onclick="() => Borrar(p)">Borrar</button>
+        </td>
+
+    </tr>
+}
+</table>
+
+@code {
+    private string? Frutas = "Frutas";
+    private string? Verduras = "Verduras";
+    private string? Lacteos = "Lacteos";
+    
+
+    private List<Producto> productos = [];
+    private Producto producto = new Producto();
+
+
+    private void Guardar()
+    {
+        productos.Add(producto);
+    }
+
+    private void Borrar(Producto p)
+    {
+        
+    }
+
+}

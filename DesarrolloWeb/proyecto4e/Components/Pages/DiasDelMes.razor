@@ -1,0 +1,65 @@
+@page "/DiasDelMes"
+@rendermode InteractiveServer
+<PageTitle>Conocer los días del mes</PageTitle>
+<h1>Conocer los días del mes</h1>
+
+<div class="m-3">
+    <div class="row">
+        <label for="mes" class="form-label col-1 mt-1">Mes</label>
+        <input  id="mes" @bind="_mes" class="form-control col" placeholder="Mes" />
+    </div>
+    
+    <div class="row mt-2">
+        <label for="año" class="form-label col-1 mt-1">Año</label>
+        <input id="año" @bind="_ano" class="form-control col" placeholder="Año" />
+    </div>
+    
+    <button @onclick="Calcular" class="btn btn-primary mt-3">Calcular</button>
+    
+
+    <div class="mt-4">
+        <div class="card-body">
+            <h1>El mes @_mes del año @_ano tiene @_numDias días.</h1>
+        </div>
+    </div>
+    
+
+</div>
+
+@code {
+    private string? _mes;
+    private string? _ano;
+    private int? _numDias;
+
+    private void Calcular()
+    {
+        int mesNum;
+        int anoNum;
+        int[] treintaYUno = { 1, 3, 5, 7, 8, 10, 12 };
+        int[] treinta = { 4,6,9,11 };
+
+        if (int.TryParse(_mes, out mesNum) && int.TryParse(_ano, out anoNum))
+        {
+            if (treintaYUno.Contains(mesNum))
+            {
+                _numDias = 31;
+            }
+            else if (treinta.Contains(mesNum))
+            {
+                _numDias = 30;
+            }
+            else if (mesNum == 2)
+            {
+                _numDias = DateTime.IsLeapYear(anoNum) ? 29 : 28;
+            }
+            else
+            {
+                _numDias = 0; 
+            }
+        }
+        else
+        {
+            _numDias = 0;
+        }
+    }
+}

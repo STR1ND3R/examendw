@@ -1,0 +1,58 @@
+
+@page "/cambiomoneda"
+@rendermode InteractiveServer
+
+<h3>CambioMoneda </h3>
+
+<div>
+    
+    <div class="form-group">
+        <label for="pesos">Pesos</label>
+        <input id = "pesos" class="form-control" type="number" @bind="pesos">
+    </div>
+    <button class="btn btn-primary my-2" @onclick="Convert">Convertir</button>
+    
+    <fieldset>
+        
+
+        <div class="form-group">
+            <label for="dolars">Dolares</label>
+            <input id="dolars" class="form-control" type="number" readonly value="@dolares">
+        </div>
+
+        <div class="form-group">
+            <label for="euros">Euros</label>
+            <input id="euros" class="form-control" type="number" readonly value="@euros">
+        </div>
+
+        <div class="form-group">
+            <label for="libras">Libras</label>
+            <input id="libras" class="form-control" type="number" readonly value="@libras">
+        </div>
+    </fieldset>
+
+</div>    
+
+
+@code {
+
+    
+    private double pesos {get;set;}
+    private double dolares {get;set;}
+    private double euros {get;set;}
+    private double libras {get;set;}
+    
+    private double valor_dolares = 16.86;
+    private double valor_euros = 18.38;
+    private double valor_libras = 21.48;
+    
+    private void Convert()
+    {
+        dolares = pesos * valor_dolares;
+        euros = pesos * valor_euros;
+        libras = pesos * valor_libras;
+
+
+    }
+    
+}

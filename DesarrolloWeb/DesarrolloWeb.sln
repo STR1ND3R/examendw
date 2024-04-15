@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proyecto4e", "proyecto4e\proyecto4e.csproj", "{58BB70AC-0193-4ADE-857A-F1328F2D597D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "examen", "examen\examen.csproj", "{C9A18B90-7951-4F18-A046-DDF690728B3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58BB70AC-0193-4ADE-857A-F1328F2D597D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58BB70AC-0193-4ADE-857A-F1328F2D597D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58BB70AC-0193-4ADE-857A-F1328F2D597D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58BB70AC-0193-4ADE-857A-F1328F2D597D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A18B90-7951-4F18-A046-DDF690728B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A18B90-7951-4F18-A046-DDF690728B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A18B90-7951-4F18-A046-DDF690728B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A18B90-7951-4F18-A046-DDF690728B3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

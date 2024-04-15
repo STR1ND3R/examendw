@@ -1,0 +1,46 @@
+@page "/ListaDeNumeros"
+@rendermode InteractiveServer
+
+<div class="m-3">
+    <div class="row">
+        <label for="primero" class="form-label col-1 mt-1">Primero</label>
+        <input  id="primero" @bind="primero" class="form-control col"  />
+    </div>
+    
+    <div class="row mt-2">
+        <label for="segundo" class="form-label col-1 mt-1">Segundo</label>
+        <input id="segundo" @bind="segundo" class="form-control col"  />
+    </div>
+    
+    <button @onclick="Mostrar" class="btn btn-primary mt-3">Calcular</button>
+    
+
+
+</div>
+<h3>ListaDeNumeros</h3>
+
+@TablaPar()
+
+@code {
+    private int? primero;
+    private int? segundo;
+
+    private void Mostrar()
+    {
+    }
+
+
+    public RenderFragment TablaPar()
+    {
+        return @<table>
+                   <tbody>
+                   @for (int? i = segundo; i <= primero; i = 2)
+                   {
+                   <tr><td>@i.ToString()</td></tr>
+                       
+                   }
+                   </tbody>
+        </table>;
+    }
+
+}

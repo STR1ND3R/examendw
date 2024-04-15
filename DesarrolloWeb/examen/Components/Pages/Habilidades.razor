@@ -1,0 +1,28 @@
+﻿@page "/habilidades"
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Habilidades</h1>
+<p>En este apartado te presentaré mis habilidades</p>
+<ul>
+    <li>Ingles</li>
+    <li>Aleman</li>
+    <li>Hebreo</li>
+</ul>
+
+<p>Los lenguajes que domino son</p>
+<ul>
+    <li>Python</li>
+    <li>Javascript</li>
+    <li>Ruby</li>
+</ul>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
